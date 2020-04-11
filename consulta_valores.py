@@ -3,6 +3,11 @@ import pandas
 import decimal
 
 
+def converter_data(data):
+    dia = data[8:]+'/'+data[5:7]+'/'+data[0:4]
+    return dia
+
+
 def chave_de_acesso(chave='c45326ac410e55c9568091de9161ca9e'):
     url = f'http://data.fixer.io/api/latest?access_key={chave}'
     return url
@@ -27,7 +32,7 @@ def main():
         print("Conexão com a base de dados estabelecida com sucesso...")
 
         dados = resposta.json()
-        data = dados['date']
+        data = converter_data(dados['date'])
         cotacao_USD = converter_em_reais(
             dados['rates']['BRL'], dados['rates']['USD'])
         coracao_GBP = converter_em_reais(
