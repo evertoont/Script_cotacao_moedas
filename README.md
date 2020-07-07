@@ -19,4 +19,4 @@ pip install pandas
 pip install requests
 ```
 > API Utilizada: [Fixer.io](https://fixer.io/) <br/>
-**Desenvolvedor:** Everton Oliver
+**Desenvolvedor:** Everton Reis
